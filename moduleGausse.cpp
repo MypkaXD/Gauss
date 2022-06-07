@@ -97,37 +97,3 @@ void GaussSolver::swap(Matrix& first, Vector& other, int value) {
 			break;
 		}
 }
-
-bool GaussSolver::testofresult(const Matrix& first, const Vector& second) {
-	Vector solutions_temp(solutions[0].getLenght());
-
-	if (!state)
-		return false;
-	else if (state == 1)
-		solutions_temp = solutions[0];
-	else {
-		solutions_temp.resize(solutions.size());
-		for (int count = 0; count < indep.size(); count++)
-			solutions_temp[indep[count]] = solutions[count][solutions.size()];
-	}
-
-
-
-
-	Matrix first_temp(solutions_temp.getLenght(), 1);
-	for (int count = 0; count < solutions_temp.getLenght(); count++)
-		first_temp[count][0] = solutions_temp[count];
-	Matrix temp = first * first_temp;
-
-
-
-	double norm = 0, norm2 = 0;
-	for (int count = 0; count < second.getLenght(); count++) {
-		norm += second[count] * second[count];
-		norm2 += temp[count][0] * temp[count][0];
-	}
-	if (abs(pow(norm, 0.5) - pow(norm2, 0.5)) < accuracy)
-		return true;
-
-	return false;
-}
