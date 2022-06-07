@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
 #include <cmath>
 #include "incMatrix.h"
@@ -30,15 +30,11 @@ int main() {
 	Vector B(column);
 	std::cin >> B;
 	std::cout << B;
-	double accuracy{10e-15};
+	double accuracy{ 10e-15 };
 	GaussSolver AB(accuracy);
 
 	AB.Solve(A, B);
 	AB.print();
-
-
-	AB.testofresult(A, B) ? std::cout << "Test completed" : std::cout << "Test failed";
-
 
 	return 0;
 }
