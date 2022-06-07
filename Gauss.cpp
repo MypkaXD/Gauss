@@ -31,7 +31,7 @@ int main() {
 	std::cin >> B;
 	std::cout << B;
 	double accuracy{10e-15};
-	GaussSolver a1(accuracy);
+	GaussSolver AB(accuracy);
 
 	AB.Solve(A, B);
 	AB.print();
