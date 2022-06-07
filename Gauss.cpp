@@ -33,11 +33,11 @@ int main() {
 	double accuracy{10e-15};
 	GaussSolver a1(accuracy);
 
-	a1.Solve(A, B);
-	a1.print();
+	AB.Solve(A, B);
+	AB.print();
 
 
-	a1.testofresult(A, B) ? std::cout << "Test completed" : std::cout << "Test failed";
+	AB.testofresult(A, B) ? std::cout << "Test completed" : std::cout << "Test failed";
 
 
 	return 0;
