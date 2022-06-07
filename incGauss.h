@@ -88,8 +88,6 @@ public:
 	void print();
 
 	void swap(Matrix& first, Vector& other, int value);
-
-	bool testofresult(const Matrix& first, const Vector& second);
 };
 
 #endif // !INCGAUSS_H
